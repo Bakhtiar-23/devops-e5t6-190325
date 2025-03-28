@@ -1,14 +1,16 @@
+name: Test, Build, and Deploy to GitHub Pages
 
-name: My first workflow for continuous deployment
-
+# Trigger workflow on push or pull request to the main branch
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -30,54 +32,8 @@ jobs:
 
     - run: npm run test
 
-    - name: Deploy to GH Pages 🚀
+    - name: Deploy to GitHub Pages 🚀
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: build  # Correct directory
-
-name: Test, Build, and Deploy to GitHub Pages
-
-# Trigger workflow on push or pull request to the main branch
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Step 1: Check out the code from the repository
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # Step 2: Set up Node.js environment (assuming you're using Node.js for your app)
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16' # Set the Node.js version you use
-
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm install
-
-      # Step 4: Run tests (if applicable)
-      - name: Run tests
-        run: npm test -- --coverage
-
-      # Step 5: Build the application
-      - name: Build the application
-        run: npm run build
-
-      # Step 6: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Use the automatically created token
-          publish_dir: ./build # Specify the directory to publish (for React, it’s `build`)
-
+        publish_dir: build  # Correct directory for React build output
