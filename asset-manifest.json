@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/devops-e5t6-190325/static/css/main.736ccca2.css",
+    "main.js": "/devops-e5t6-190325/static/js/main.5129740f.js",
+    "index.html": "/devops-e5t6-190325/index.html",
+    "main.736ccca2.css.map": "/devops-e5t6-190325/static/css/main.736ccca2.css.map",
+    "main.5129740f.js.map": "/devops-e5t6-190325/static/js/main.5129740f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.736ccca2.css",
+    "static/js/main.5129740f.js"
+  ]
+}
