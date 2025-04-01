@@ -8,7 +8,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prepare": "husky && husky install"
   },
   "browserslist": {
     "production": [
@@ -27,13 +28,30 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@babel/core": "^7.26.10",
+    "@babel/eslint-parser": "^7.27.0",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@eslint/js": "^9.23.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-react": "^7.37.4",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.0.0",
+    "husky": "^8.0.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js,html.css}": "prettier --write",
+    "src/**/*.jsx": "eslint --fix"
   },
   "homepage": "https://bakhtiar-23.github.io/devops-e5t6-190325"
 }

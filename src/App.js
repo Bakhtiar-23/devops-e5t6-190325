@@ -1,10 +1,11 @@
 import { useState } from "react";
-import "./App.css"
+import "./App.css";
 import { TodoList } from "./TodoList";
-import { TodoInput } from "./TodoInput"
+import { TodoInput } from "./TodoInput";
+
+console.log("Hello Husky");
 
 const App = () => {
-
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
